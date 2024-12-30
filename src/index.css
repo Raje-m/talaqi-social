@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+body {
+  font-family: "Cairo", sans-serif;
+
+
+}
+
+.border{
+  border:1px solid red
+}
+
+
+.MuiCardHeader-action.css-116l9hl-MuiCardHeader-action{
+  width: 100%;
+}
