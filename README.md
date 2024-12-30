@@ -1,3 +1,7 @@
+# talaqi-social
+ social website
+in this web site you can create posts and comments also you can add create new user and login
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
