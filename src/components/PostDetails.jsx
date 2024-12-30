@@ -9,7 +9,7 @@ export default function PostDetails ()
   const { id } = useParams()
 
   // eslint-disable-next-line no-unused-vars
-  const { data: post, error, isLoading } = useGetPostDetailsQuery( id )
+  const { data: post, error, isLoading } = useGetPostDetailsQuery( id&&id)
   return (
     <Container sx={ { display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' ,minHeight:'100vh',py:5} }>
       { post ? <Post post={ post.data } /> : <LoadingCard /> }

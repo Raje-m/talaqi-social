@@ -19,10 +19,10 @@ export default function UserDetails ()
   const { id } = useParams()
   // get info for user 
 
-  const { data, error, isLoading } = useGetUserDetailsQuery( id )
+  const { data, error, isLoading } = useGetUserDetailsQuery( id&&id)
 
   // get posts for user id 
-  const { data: postData, error: postError, isLoading: postIsLoading } = useGetUserPostsQuery( id )
+  const { data: postData, error: postError, isLoading: postIsLoading } = useGetUserPostsQuery( id && id)
 
   useEffect( () =>
   {
