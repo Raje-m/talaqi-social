@@ -23,6 +23,8 @@ export const postsSlice = createSlice( {
       localStorage.setItem( 'user', JSON.stringify( action.payload.user ) );
       state.userInfo = { token: action.payload.token, user: action.payload.user }
 
+
+      
     },
     openDialog: ( state, action ) =>
     {
