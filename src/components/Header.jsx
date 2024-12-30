@@ -57,7 +57,7 @@ export const Header = () =>
           <Box display={ 'flex' } alignItems={ "center" } >
 
           <Link to="/" sx={ { textDecoration: 'none', color: '#fff' } }>
-            <img src="/public/logo.png" style={ { width: '40px', borderRadius: '50%', background: '#fff' } } />
+            <img src="/logo.png" style={ { width: '40px', borderRadius: '50%', background: '#fff' } } />
           </Link>
              {/* <SearchAppBar/>  */}
             <Link to={ '/' } style={{color:"#fff"}}>

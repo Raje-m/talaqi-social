@@ -9,6 +9,7 @@ export default function LinerProgress ()
       <Box sx={ { display: 'flex' ,alignItems:'center',justifyContent:'center',maxWidth:1,position:'absolute',bottom:'50px',left:'50%'} }>
         <CircularProgress />
       </Box>
-    </Container>
+      
+    </Container> 
   );
 }
