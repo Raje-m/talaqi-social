@@ -25,8 +25,8 @@ function App ()
             <Header />
             <Routes>
               <Route path="/" element={ <Content /> } />
-              {/* <Route path="postdetails/:id" element={ <PostDetails /> } /> */ }
-              {/* <Route path="userDetails/:id" element={ <UserDetails /> } /> */ }
+              <Route path="postdetails/:id" element={ <PostDetails /> } />
+              <Route path="userDetails/:id" element={ <UserDetails /> } />
             </Routes>
             <AddNewPostDialog />
             <DeletePostDialog />

@@ -64,7 +64,7 @@ export const Header = () =>
               <Button
                 color="#fff" size="small">Home</Button>
             </Link >
-            <Link to={ userInfo && userInfo.token != '' ? `userDetails/${ userInfo.user.id }` : '' } style={ { color: "#fff" } }>
+          <Link to={ userInfo && userInfo.token != '' ? `userDetails/${ userInfo.user.id && userInfo.user.id }` : '' } style={ { color: "#fff" } }>   
               <Button color="#fff" size="small">Profile</Button>
             </Link>
           </Box>
