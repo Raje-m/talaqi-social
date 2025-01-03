@@ -6,7 +6,9 @@ const initialState = {
   postToDel: null,
   alertMsg: { isShow: false, msg: '', alertColor: '' },
   allPosts: [],
-  userInfo: { token: JSON.parse( localStorage.getItem( 'token' ) ), user: JSON.parse( localStorage.getItem( 'user' ) ) || { id: 0 } },
+  userInfo: {
+    token: JSON.parse( localStorage.getItem( 'token' ) )||'', user: JSON.parse( localStorage.getItem( 'user' ) )
+  },
   userPosts: [],
   postComments: {},
 

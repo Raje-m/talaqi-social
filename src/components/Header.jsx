@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Typography, useMediaQuery } from "@mui/material"
+import { Box, Button, IconButton, Tooltip, useMediaQuery } from "@mui/material"
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import { useContext } from "react";
@@ -53,16 +53,17 @@ export const Header = () =>
 
   return (
     <>
-        <Box sx={ { display: 'flex', alignItems: 'center', background: blueGrey[600], px: 1, borderBottomLeftRadius: '6px', borderBottomRightRadius: '6px', boxShadow: '0 0  2px #ddd', p: '2px 15px' } }>
+      <Box sx={ {  display: 'flex', alignItems: 'center', background: blueGrey[ 600 ], px: 1, borderBottomLeftRadius: '6px', borderBottomRightRadius: '6px', boxShadow: '0 0  2px #ddd', p: '2px 15px'} }>
           <Box display={ 'flex' } alignItems={ "center" } >
-
           <Link to="/" sx={ { textDecoration: 'none', color: '#fff' } }>
             <img src="/logo.png" style={ { width: '40px', borderRadius: '50%', background: '#fff' } } />
           </Link>
              {/* <SearchAppBar/>  */}
             <Link to={ '/' } style={{color:"#fff"}}>
               <Button
-                color="#fff" size="small">Home</Button>
+              color={
+                theme.palette.text.primary
+                } size="small">Home</Button>
             </Link >
             <Link to={ userInfo && userInfo.token != '' ? `userDetails/${ userInfo.user.id }` : '' } style={ { color: "#fff" } }>
               <Button color="#fff" size="small">Profile</Button>
@@ -103,19 +104,25 @@ export const Header = () =>
                 </IconButton>
               ) }
             </div>
-            <Box display={ userInfo.token == "" ? "flex" : "none" } gap={ 1 } alignItems={ 'center' }>
+          <Box display={ userInfo.token == "" ? "flex" : "none" } gap={ 1 } alignItems={ 'center' }>
+            <Tooltip title={ 'Sign Up ' } placement="bottom">
               <Button size="small" variant="contained" startIcon={ < LoginOutlinedIcon fontSize="small" /> } onClick={ handleSignUp } sx={ { bgcolor: theme.palette.mainColor.main, color: '#fff' } } > { matches ? "" : 'Sign Up' }   </Button>
+            </Tooltip>
+            <Tooltip title={ 'Login' } placement="bottom">
               <Button size="small" variant="contained" startIcon={ <ExitToAppOutlinedIcon fontSize="small" /> } onClick={ handleLogIn } sx={ { bgcolor: theme.palette.mainColor.main, color: '#fff' } }>{ matches ? "" : 'Log In' }</Button>
-            </Box>
+            </Tooltip>
+          </Box>
             { userInfo.token !== '' && <Box display={ userInfo.token == "" ? "none" : "flex" } gap={ 1 } alignItems={ 'center' } position={ 'relative' } >
               <Link to={ userInfo && userInfo.token != '' ? `userDetails/${ userInfo.user.id }` : '' }>
               <IconButton sx={ { borderRadius: '5px', mr: 0 } } aria-label="settings"    >
-                { userInfo.user.profile_image.length > 0 ? <img src={ userInfo.user.profile_image } alt={ userInfo.user.name } style={ { width: '40px', height: '40px', borderRadius: '50%', paddingRight: "5px" } } /> : <Avatar sx={ { bgcolor: red[ 500 ], mr:0 } } aria-label="recipe">
+                { userInfo.user.profile_image.length > 0 ? <img src={ userInfo.user.profile_image } alt={ '' } style={ { width: '40px', height: '40px', borderRadius: '50%', paddingRight: "5px" } } /> : <Avatar sx={ { bgcolor: red[ 500 ], mr:0 } } aria-label="recipe">
                   { userInfo.user.name[ 0 ].toUpperCase() }
                 </Avatar> }
               </IconButton>
-              </Link>
+            </Link>
+            <Tooltip title={ 'Logout' } placement="bottom">
               <Button size="small" variant="contained" startIcon={ < LoginOutlinedIcon fontSize="small" /> } onClick={ handleSignOut } sx={ { bgcolor: theme.palette.mainColor.main, color: '#fff', p: 1 } } >  </Button>
+            </Tooltip>
             </Box> }
           </Box>
         </Box>
